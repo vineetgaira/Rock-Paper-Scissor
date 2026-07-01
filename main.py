@@ -1,37 +1,22 @@
 import random
 
-def game_menu():
-    print("You have three choices.")
-    print("1 : Rock")
-    print("2 : Paper")
-    print("3 : Scissor")
-    print("4 : Display Wins/Loss")
-    print("5 : Exit")
+def main():
+    pass
+ 
+def get_user_choice():
+    pass
 
-def computer_side_logic():
+def get_computer_choice():
+    pass
 
-    computer_choices={1:"Rock",
-                      2:"Paper",
-                      3:"Scissor"}
-    
-    computer_select=random.randint(1,3)
+def decide_winner():
+    pass
 
-    return computer_select
+def update_score():
+    pass
 
-def user_choice_validation(user_choice):
-    if user_choice in range(1,6):
-        return "Valid"
-    else:
-        return "Invalid choice.\nPlease enter a integer from menu."
-
-def game_logic(user_choice,computer_select):
-
-    win=0
-    loss=0
-    draw=0
-    total=0
-    while True:
-
+def display_score():
+    pass
         
 
 
