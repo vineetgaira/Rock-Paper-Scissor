@@ -15,13 +15,11 @@ cc={1:"Rock",
 
 revcc={"Rock":1,
       "Paper":2,
-      "Scissor":2}
+      "Scissor":3}
 
 computer=random.randint(1,3)
 
 x=revcc[cc[computer]]
-
-
 
 win=0
 loss=0
@@ -36,9 +34,9 @@ while True:
     
     user_choice=int(input("Enter your choice :"))
 
-    if user_choice-x==0:
+    if x-user_choice == 0:
         print(f"This game is a draw.\nYou selected {cc[user_choice]} computer selected {cc[computer]}.")
-    elif x-user_choice== -1 or 2:
+    elif x-user_choice== 1 or -2:
         print(f"You win.\nYou chose {cc[user_choice]} computer chose {cc[computer]}.")
         win+=1
     elif user_choice-x== -1 or 2:
