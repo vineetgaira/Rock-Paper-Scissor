@@ -39,7 +39,10 @@ def display_score():
     pass
     
 def main():
-    pass
+    user_choice=get_user_choice()
+    computer_choice=get_computer_choice()
+
+    result=decide_winner(user_choice,computer_choice)
 
 main()
 
