@@ -7,13 +7,19 @@ A command-line Rock-Paper-Scissor game.
 ## Features
 
 -Random games.  
--Win and Lose.
+-Win and Lose.  
+-Displays scores.  
+-Multiple rounds exit when you want.
 
 
 ## Rules
--You select Rock, Paper, Scissor.  
+-It's and integer based game.  
+-I have assigned a one integer value to each choice.  
+-Rock:1, Paper:2, Scissor:3
+-You select from the menu.  
 -Computer selects randomly as well.  
 -You win or lose.
+  
 
 
 ## How to Run
