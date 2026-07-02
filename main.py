@@ -14,7 +14,7 @@ def get_user_choice():
     if user_choice in valid_choices:
         return user_choice
     else:
-        
+        print("Please enter a valid choice. Look at the menu")
     
 def get_computer_choice():
     
