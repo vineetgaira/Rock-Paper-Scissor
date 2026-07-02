@@ -12,11 +12,16 @@ def get_user_choice():
 
     user_choice=int(input("Enter your choice :"))
     valid_choices={1,2,3,4}
-    if user_choice in valid_choices:
-        return user_choice
-    else:
-        print("Please enter a valid choice. Look at the menu")
+    try:
+        if user_choice in valid_choices:
+            return user_choice
+    except:       
+        if type(user_choice)==str:
+            print( "Please enter a valid integer from menu.")
+        elif user_choice>4 or user_choice<1:
+            print("Please enter a integer between 1 and 4.")
     
+            
 def get_computer_choice():
     
     computer=random.randint(1,3)
