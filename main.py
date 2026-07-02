@@ -40,19 +40,19 @@ def decide_winner(user,computer):
         return  f"You Lose"
     
 def update_score(result,score_tracker,user,computer):
-    computer_choices={1:"Rock",
+    move_names={1:"Rock",
                       2:"Paper",
                       3:"Scissor"}
 
     if result=="Draw.":
         score_tracker["Draw"]+=1
-        print(f"Both chose {computer_choices[user]}.")
+        print(f"Both chose {move_names[user]}.")
     elif result=="You Win.":
         score_tracker["User"]+=1
-        print(f"You Win!\n.You : {computer_choices[user]} || Computer : {computer_choices[computer]}")
+        print(f"You Win!\n.You : {move_names[user]} || Computer : {move_names[computer]}")
     else:
         score_tracker["Computer"]+=1
-        print(f"You Lose!\n.You : {computer_choices[user]}|| Computer : {computer_choices[computer]}.")
+        print(f"You Lose!\n.You : {move_names[user]}|| Computer : {move_names[computer]}.")
 
     print("Scores...\n"
           f"You : {score_tracker["User"]}\n"
