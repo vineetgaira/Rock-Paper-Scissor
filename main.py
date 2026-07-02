@@ -46,10 +46,10 @@ def update_score(result,score_tracker,user,computer):
         print(f"Both chose {MOVE_NAMES[user]}.")
     elif result==1:
         score_tracker["User"]+=1
-        print(f"You Win!\n.You : {MOVE_NAMES[user]} || Computer : {MOVE_NAMES[computer]}")
+        print(f"You Win!\nYou : {MOVE_NAMES[user]} || Computer : {MOVE_NAMES[computer]}")
     else:
         score_tracker["Computer"]+=1
-        print(f"You Lose!\n.You : {MOVE_NAMES[user]}|| Computer :{MOVE_NAMES[computer]}.")
+        print(f"You Lose!\nYou : {MOVE_NAMES[user]}|| Computer :{MOVE_NAMES[computer]}.")
 
     print("Scores...\n"
           f"You : {score_tracker["User"]}\n"
