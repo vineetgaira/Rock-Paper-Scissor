@@ -1,7 +1,7 @@
 # Rock-Paper-Scissor
 
 A command-line Rock-Paper-Scissor game.  
-(This more of a fun learning project that I am creating to recall some of the previouslu learned topics.)
+(This more of a fun learning project that I am creating to recall some of the previously learned topics.)
 
 
 ## Features
