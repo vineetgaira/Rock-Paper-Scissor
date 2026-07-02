@@ -5,18 +5,15 @@ def display_menu():
     print("1 : Rock")
     print("2 : Paper")
     print("3 : Scissor")
-    print("4 : Display score")
-    print("5 : Exit")
+    print("4 : Exit")
 
 def get_user_choice():
 
     user_choice=int(input("Enter your choice :")) 
-    if user_choice in range(1,6):
+    if user_choice in range(1,5):
         return user_choice
-    else:
-        return "Please enter a valid choice. Choose a number from the given menu."
-
-user_choice = get_user_choice()
+    print("Please enter a valid choice. Choose a number from the given menu.")
+    
 
 def get_computer_choice():
     
@@ -24,27 +21,44 @@ def get_computer_choice():
 
     return computer
 
-computer_choice = get_computer_choice()
 
-def decide_winner(user_choice,computer_choice):
+def decide_winner(user,computer):
+    computer_choices={1:"Rock",
+                      2:"Paper",
+                      3:"Scissor"}
     
-    if computer_choice - user_choice ==0:
+    if computer - user ==0:
         return "It's a draw."
-    elif (computer_choice-user_choice) % 3 != 1:
-        return  f"You Win.\nComputer chose {computer_choice} You chose {user_choice}."
-    elif (computer_choice()-user_choice()) % 3 == 1:
-        return  f"You Lose.\nComputer chose {computer_choice} You chose {user_choice}."
+    elif (computer-user) % 3 != 1:
+        return  f"You Win.\nComputer chose {computer_choices[computer]} You chose {computer_choices[user]}."
+    elif (computer-user) % 3 == 1:
+        return  f"You Lose.\nComputer chose {computer_choices[computer]} You chose {computer_choices[user]}."
     
-def display_score():
+def update_score():
     pass
     
-def main():
-    user_choice=get_user_choice()
-    computer_choice=get_computer_choice()
+def play_game():
+    while True:
 
-    result=decide_winner(user_choice,computer_choice)
+        player_choice=get_user_choice()
+        comp_choice=get_computer_choice()
+        if player_choice==4:
+            print("Thanks for playing.Exiting....")
+            break
+        result=decide_winner(player_choice,comp_choice)
 
-main()
+        print(result)
+
+if __name__=="__main__":
+    play_game()
+
+
+
+        
+
+
+
+
 
         
 
