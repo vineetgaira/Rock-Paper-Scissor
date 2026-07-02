@@ -1,6 +1,7 @@
 import random
 
 def display_menu():
+    print("....Welcome! to Rock, Paper, Scissors....")
     print("Here are your choices.")
     print("1 : Rock")
     print("2 : Paper")
@@ -55,11 +56,12 @@ def update_score(result,score_tracker,user,computer):
 
     )
  
-    
 def play_game():
-    print("....Welcome to Rock, Paper, Scissors....")
+    
+    display_menu() 
     scores={"User":0,"Computer":0,"Draw":0}
     while True:
+
 
         player_choice=get_user_choice()
         comp_choice=get_computer_choice()
@@ -72,6 +74,7 @@ def play_game():
         round_result=decide_winner(player_choice,comp_choice)
         update_score(round_result,scores,player_choice,comp_choice)
 
+    
 
 if __name__=="__main__":
     play_game()
