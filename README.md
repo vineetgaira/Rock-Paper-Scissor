@@ -54,7 +54,7 @@ This is a simple yet complete command-line implementation of Rock, Paper, Scisso
 
 ### Run the game
 ```bash
-python rock_paper_scissors.py
+python main.py
 ```
 
 ## 🕹️ How to Play
@@ -94,7 +94,7 @@ Draws: 0
 ## 🗂️ Project Structure
 
 ```
-rock_paper_scissors.py
+main.py
 ├── display_menu()        # Prints the game menu
 ├── get_user_choice()     # Validates and returns the player's move
 ├── get_computer_choice() # Generates a random move for the computer
