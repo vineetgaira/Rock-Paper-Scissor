@@ -9,12 +9,13 @@ def display_menu():
 
 def get_user_choice():
 
-    user_choice=int(input("Enter your choice :")) 
-    if user_choice in range(1,5):
+    user_choice=int(input("Enter your choice :"))
+    valid_choices={1,2,3,4}
+    if user_choice in valid_choices:
         return user_choice
-    print("Please enter a valid choice. Choose a number from the given menu.")
+    else:
+        print("Please enter a valid choice. Look at the menu")
     
-
 def get_computer_choice():
     
     computer=random.randint(1,3)
@@ -23,31 +24,54 @@ def get_computer_choice():
 
 
 def decide_winner(user,computer):
+
+    
+    if computer - user ==0:
+        return "Draw."
+    elif (computer-user) % 3 != 1:
+        return  f"You Win."
+    elif (computer-user) % 3 == 1:
+        return  f"You Lose"
+    
+def update_score(result,score_tracker,user,computer):
     computer_choices={1:"Rock",
                       2:"Paper",
                       3:"Scissor"}
-    
-    if computer - user ==0:
-        return "It's a draw."
-    elif (computer-user) % 3 != 1:
-        return  f"You Win.\nComputer chose {computer_choices[computer]} You chose {computer_choices[user]}."
-    elif (computer-user) % 3 == 1:
-        return  f"You Lose.\nComputer chose {computer_choices[computer]} You chose {computer_choices[user]}."
-    
-def update_score():
-    pass
+
+    if result=="Draw.":
+        score_tracker["Draw"]+=1
+        print(f"Both chose {computer_choices[user]}.")
+    elif result=="You Win.":
+        score_tracker["User"]+=1
+        print(f"You Win!\n.You : {computer_choices[user]} || Computer : {computer_choices[computer]}")
+    else:
+        score_tracker["Computer"]+=1
+        print(f"You Lose!\n.You : {computer_choices[user]}|| Computer : {computer_choices[computer]}.")
+
+    print("Scores...\n"
+          f"You : {score_tracker["User"]}\n"
+          f"Computer : {score_tracker["Computer"]}\n"
+          f"Draws: {score_tracker["Draw"]}"
+
+    )
+ 
     
 def play_game():
+    print("....Welcome to Rock, Paper, Scissors....")
+    scores={"User":0,"Computer":0,"Draw":0}
     while True:
 
         player_choice=get_user_choice()
         comp_choice=get_computer_choice()
         if player_choice==4:
-            print("Thanks for playing.Exiting....")
+            print("Thanks for playing.\nFinal Results:")
+            print(
+                f"You : {scores["User"]} || Computer : {scores["Computer"]} || Draws : {scores["Draw"]}"
+            )
             break
-        result=decide_winner(player_choice,comp_choice)
+        round_result=decide_winner(player_choice,comp_choice)
+        update_score(round_result,scores,player_choice,comp_choice)
 
-        print(result)
 
 if __name__=="__main__":
     play_game()
