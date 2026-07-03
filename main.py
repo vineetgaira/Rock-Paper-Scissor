@@ -4,6 +4,8 @@ MOVE_NAMES={1:"Rock",
             3:"Scissor"}
 
 GREEN = "\033[32m"
+BLUE = "\033[34m"
+RED = " \033[31m"
 RESET = "\033[0m"
 
 
@@ -26,7 +28,7 @@ def get_user_choice():
             else:
                 print("Please enter a valid choice. LOOK AT THE MENU!")
         except ValueError:
-            print("Please enter a valid choice. LOOK AT THE MENU!")
+            print(f"Please enter a valid choice. LOOK AT THE MENU!{RESET}")
             
 def get_computer_choice():
     
@@ -47,18 +49,18 @@ def update_score(result,score_tracker,user,computer):
 
     if result==0:
         score_tracker["Draw"]+=1
-        print(f"Both chose {MOVE_NAMES[user]}.")
+        print(f"{BLUE}Both chose {MOVE_NAMES[user]}.")
     elif result==1:
         score_tracker["User"]+=1
-        print(f"You Win!\nYou : {MOVE_NAMES[user]} || Computer : {MOVE_NAMES[computer]}")
+        print(f"You Win!\nYou : {MOVE_NAMES[user]} || Computer : {MOVE_NAMES[computer]}{RESET}")
     else:
         score_tracker["Computer"]+=1
-        print(f"You Lose!\nYou : {MOVE_NAMES[user]}|| Computer :{MOVE_NAMES[computer]}.")
+        print(f"{RED}You Lose!\nYou : {MOVE_NAMES[user]}|| Computer :{MOVE_NAMES[computer]}.{RESET}")
 
-    print("Scores...\n"
+    print(f"{BLUE}Scores...\n"
           f"You : {score_tracker["User"]}\n"
           f"Computer : {score_tracker["Computer"]}\n"
-          f"Draws: {score_tracker["Draw"]}"
+          f"Draws: {score_tracker["Draw"]}{RESET}"
 
     )
  
@@ -69,7 +71,7 @@ def play_game():
         display_menu() 
         player_choice=get_user_choice()
         if player_choice==4:
-            print("Thanks for playing.\nFinal Results:")
+            print(f"{BLUE}Thanks for playing.\nFinal Results:")
             print(
                 f"You : {scores["User"]} || Computer : {scores["Computer"]} || Draws : {scores["Draw"]}{RESET}"
             )
