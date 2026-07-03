@@ -3,20 +3,24 @@ MOVE_NAMES={1:"Rock",
             2:"Paper",
             3:"Scissor"}
 
+GREEN = "\033[32m"
+RESET = "\033[0m"
+
+
 def display_menu():
-    print("....Welcome! to Rock, Paper, Scissors....")
-    print("Here are your choices.")
-    print("1 : Rock")
-    print("2 : Paper")
-    print("3 : Scissor")
-    print("4 : Exit")
+    print(f"{GREEN}....Welcome! to Rock, Paper, Scissors....\n"
+    "Here are your choices.\n"
+    "1 : Rock\n"
+    "2 : Paper\n"
+    "3 : Scissor\n"
+    "4 : Exit")
 
 def get_user_choice():
 
     valid_choices={1,2,3,4}
     while True:
         try:
-            user_choice=int(input("Enter your choice :"))
+            user_choice=int(input(f"Enter your choice :"))
             if user_choice in valid_choices:
                 return user_choice
             else:
@@ -67,7 +71,7 @@ def play_game():
         if player_choice==4:
             print("Thanks for playing.\nFinal Results:")
             print(
-                f"You : {scores["User"]} || Computer : {scores["Computer"]} || Draws : {scores["Draw"]}"
+                f"You : {scores["User"]} || Computer : {scores["Computer"]} || Draws : {scores["Draw"]}{RESET}"
             )
             break
         comp_choice=get_computer_choice()
