@@ -1,13 +1,6 @@
 import random
-MOVE_NAMES={1:"Rock",
-            2:"Paper",
-            3:"Scissor"}
-
-GREEN = "\033[32m"
-BLUE = "\033[34m"
-RED = " \033[31m"
-RESET = "\033[0m"
-
+from constants import GREEN,RED,BLUE,RESET, MOVE_NAMES
+from utils import clear_screen
 
 def display_menu():
     print(f"{GREEN}....Welcome! to Rock, Paper, Scissors....\n"
